@@ -1,0 +1,169 @@
+
+body,td,th,p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #333;
+	line-height: 1.5;
+}
+body {
+	background-color: #fdfdfd;
+	margin: 0;
+	position:relative;
+}
+ul, li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #333;
+}
+a {
+	color: orange;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #3397db;
+	text-decoration: none;
+}
+a img{
+	border: none 0px #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0 20px;
+}
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+#breadcrumb {
+    list-style: none;
+    background-color: #eee;
+    font-size: 17px;
+    margin: 0;
+}
+
+/* Display list items side by side */
+#breadcrumb li {
+    display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+#breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+#breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+#breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+#map {
+    min-width: 100% ;
+    height: 100% ;
+    min-height: 200px;
+}
+
+
+footer, header > nav {
+    text-align: center ;
+}
+
+/* ====================== Restaurant Details ====================== */
+
+.inside {
+    display: flex ;
+    flex-direction: column ;
+    align-items: stretch ;
+    background-color: yellow ;
+}
+
+.inside > * {
+    border:1px dotted black ;
+
+
+}
+
+.inside img {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#maincontent {
+    display:flex ;
+    flex-direction: column ;
+    align-items: stretch ;
+    background-color: rgb(205, 198, 211) ;
+}
+
+#maincontent > * {
+    min-height: 200px ;
+    border:1px dotted green ;
+}
+
+ #restaurant-container {
+    background-color: gray ;
+}
+ #reviews-container {
+    background-color: rgb(150, 120, 120) ;
+}
+
+#reviews-container {
+    display:flex ;
+    flex-direction: column ;
+    align-items: stretch ;
+}
+
+#reviews-list {
+    display:flex ;
+    flex-direction: column ;
+    align-items: stretch ;
+    margin: 0;
+    padding: 0;
+  }
+
+#reviews-list > li {
+    display: block;
+    list-style-type: none;
+    border: 1px solid black;
+  }
+
+  @media only screen and (min-width:768px){
+    #maincontent {
+        display: grid ;
+        grid-template-columns: 1fr 1fr 1fr ;
+        /* grid-template-rows: 1fr 1fr ; */
+        grid-template-rows: auto;
+        grid-template-areas : "mymap mymap mymap"
+                              "rest review review"
+}
+
+#map {min-height: 200px;}
+#map-container {grid-area: mymap ;}
+#restaurant-container {grid-area: rest ;
+    }
+#reviews-container {grid-area: review ;}
+}
+
+@media only screen and (min-width:1200px){
+    #maincontent {
+        display: flex ;
+        flex-direction: row ;
+}
+
+#maincontent > * {
+    flex-basis: 33% ;
+}
+
+#map-container {grid-area: mymap ;}
+#restaurant-container {grid-area: rest ; }
+#reviews-container {grid-area: review ;}
+}
+
