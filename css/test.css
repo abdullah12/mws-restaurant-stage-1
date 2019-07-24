@@ -145,11 +145,11 @@ footer, header > nav {
                               "rest review review"
 }
 
-#map {min-height: 200px;}
-#map-container {grid-area: mymap ;}
-#restaurant-container {grid-area: rest ;
-    }
-#reviews-container {grid-area: review ;}
+        #map {min-height: 200px;}
+        #map-container {grid-area: mymap ;}
+        #restaurant-container {grid-area: rest ;
+            }
+        #reviews-container {grid-area: review ;}
 }
 
 @media only screen and (min-width:1200px){
