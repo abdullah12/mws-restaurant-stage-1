@@ -1,17 +1,19 @@
 const cacheName = 'resturant';
 
-//Install Event
+// install event
 self.addEventListener('install', e => {
-
+  console.log('Service Worker Installed');
 });
 
 //Activate Event
 self.addEventListener('activate', e => {
-   e.waitUntil(
+
+  e.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cache => {
           if (cache !== cacheName) {
+            console.log('Deleting old cache');
             return caches.delete(cache);
           }
         })
@@ -22,12 +24,13 @@ self.addEventListener('activate', e => {
 
 //Fetch Event
 self.addEventListener('fetch', e => {
+  console.log('Service Worker: Fetching');
   e.respondWith(
     fetch(e.request)
       .then(res => {
         const resClone = res.clone();
         caches.open(cacheName).then(cache => {
-          cache.put(e.request, resClone);
+        cache.put(e.request, resClone);
         });
         return res;
       })

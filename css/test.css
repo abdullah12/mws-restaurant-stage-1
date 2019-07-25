@@ -1,4 +1,4 @@
-
+* {box-sizing: border-box ;}
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -82,13 +82,6 @@ footer, header > nav {
     display: flex ;
     flex-direction: column ;
     align-items: stretch ;
-    background-color: yellow ;
-}
-
-.inside > * {
-    border:1px dotted black ;
-
-
 }
 
 .inside img {
@@ -100,20 +93,12 @@ footer, header > nav {
     display:flex ;
     flex-direction: column ;
     align-items: stretch ;
-    background-color: rgb(205, 198, 211) ;
 }
 
 #maincontent > * {
     min-height: 200px ;
-    border:1px dotted green ;
 }
 
- #restaurant-container {
-    background-color: gray ;
-}
- #reviews-container {
-    background-color: rgb(150, 120, 120) ;
-}
 
 #reviews-container {
     display:flex ;
@@ -132,7 +117,6 @@ footer, header > nav {
 #reviews-list > li {
     display: block;
     list-style-type: none;
-    border: 1px solid black;
   }
 
   @media only screen and (min-width:768px){
@@ -156,6 +140,7 @@ footer, header > nav {
     #maincontent {
         display: flex ;
         flex-direction: row ;
+        justify-content: space-between;
 }
 
 #maincontent > * {
